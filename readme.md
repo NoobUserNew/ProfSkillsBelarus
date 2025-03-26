@@ -1,1 +1,1 @@
-https://GITHUB-NoobUserNew.github.io/PlatTechSale
+https://noobusernew.github.io/ProfSkillsBelarus/
