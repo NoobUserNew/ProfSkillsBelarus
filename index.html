@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PlatTechSale</title>
+</head>
+
+<body>
+    <header class="head">
+        <img src="./img/laptop.png" alt="logo">
+        <nav class="navigation">
+            <a href="#">Главная</a>
+            <a href="#">Результаты поиска</a>
+            <a href="#">Оформление покупки</a>
+            <a href="#">Профиль пользователя</a>
+            <a href="#">Каталог</a>
+            <a href="#">Корзина</a>
+            <a href="#">О платформе</a>
+        </nav>
+        <input type="text" class="search">
+    </header>
+    <main>
+        <section class="products">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="./img/huawei.jpg" alt="Slide 1">
+                        <p>Huawei matebook d15</p>
+                        <p>Идеальный ноутбук для учебы.</p>
+                        <button class="slider-button">Купить</button>
+                        <button class="slider-button">Корзина</button>
+                    </div>
+                    <div class="slide">
+                        <img src="./img/asus.png" alt="Slide 1">
+                        <p>Asus tuf gaming f15</p>
+                        <p>Лучше для игр придумать нельзя</p>
+                        <button class="slider-button">Купить</button>
+                        <button class="slider-button">Корзина</button>
+                    </div>
+                    <div class="slide">
+                        <img src="./img/Lenovo.jpg" alt="Slide 1">
+                        <p>Lenovo ideapad Y-700</p>
+                        <p>Лучший вариант</p>
+                        <button class="slider-button">Купить</button>
+                        <button class="slider-button">Корзина</button>
+                    </div>
+                </div>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </section>
+        <section class="stock">
+            <div class="stock-item">
+                <img src="./img/oneAction.jpg" alt="stock">
+                <h3>1 + 1 = 3</h3>
+                <p>Покупаете 2 ноутбука 3 получаете в подарок</p>
+            </div>
+            <div class="stock-item">
+                <img src="./img/friends.png" alt="stock">
+                <h3>Приведи друга</h3>
+                <p>Вы можете получить скидку в размере 10% на любой ноутбук</p>
+            </div>
+            <div class="stock-item">
+                <img src="./img/tradeIn.jpg" alt="stock">
+                <h3>Trade In</h3>
+                <p>Сдайте свою старую технику что бы получить скидку в размере цены вашего ноутбука</p>
+            </div>
+            <div class="stock-item">
+                <img src="./img/spring.jpg" alt="stock">
+                <h3>Весенние скидки</h3>
+                <p>Скидки на всю технику в размере 25%</p>
+            </div>
+        </section>
+        <section class="brends">
+            <div class="brends-item">
+                <img src="./img/huaweiLogo.png" alt="logo">
+            </div>
+            <div class="brends-item">
+                <img src="./img/lenovoLogo.png" alt="logo">
+            </div>
+            <div class="brends-item">
+                <img src="./img/asusLogo.png" alt="logo">
+            </div>
+            <div class="brends-item">
+                <img src="./img/apple-logo.png" alt="logo">
+            </div>
+            <div class="brends-item">
+                <img src="./img/xiaomiLogo.png" alt="">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="./img/laptop.png" alt="logo">
+        <div class="contact">
+            <p>+375(29)522-12-54</p>
+            <a href="https://vk.com/">VK</a>
+            <p>profskillsbelarus@gmail.com</p>
+        </div>
+        <p>26.03.2025</p>
+        <a href="https://web.telegram.org/a/">Telegram</a>
+        <a href="http://github.com/">GitHub</a>
+    </footer>
+    <script>
+        const slider = document.querySelector('.slides');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+    </script>
+</body>
+
+</html>
